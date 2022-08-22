@@ -27,9 +27,10 @@ const EditForm: FC<IEditForm> = ({ id, submit, sortedContact }) => {
   };
 
   return (
-    <Form onFinish={submitForm} form={form} autoComplete="off">
+    <Form onFinish={submitForm} form={form}>
       <Form.Item
         label="Имя"
+        name="Имя"
         rules={[rules.required("Пожалуйста, введите имя контакта!")]}
       >
         <Input
@@ -42,6 +43,7 @@ const EditForm: FC<IEditForm> = ({ id, submit, sortedContact }) => {
       </Form.Item>
       <Form.Item
         label="Почта"
+        name="Почта"
         rules={[rules.required("Пожалуйста, введите почту контакта!")]}
       >
         <Input

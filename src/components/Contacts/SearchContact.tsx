@@ -10,8 +10,10 @@ const SearchContact: FC = () => {
   const { contact } = useTypedSelector((state) => state.contact);
 
   const sortContact = [
-    ...contact.filter((item) =>
-      item.username.toLowerCase().includes(value.toLowerCase())
+    ...contact.filter(
+      (item) =>
+        item.username.toLowerCase().includes(value.toLowerCase()) ||
+        item.email.toLowerCase().includes(value.toLowerCase())
     ),
   ];
 
